@@ -61,3 +61,17 @@ ActiveModel::UnknownAttributeError (unknown attribute 'text' for Message.)
    (0.4ms)  SET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483
 => #<Message id: nil, content: "hoge", created_at: nil, updated_at: nil, text: "fuga">
 ```
+
+## ロールバック
+
+```
+-> % rails db:rollback
+
+-> % rails c
+
+>> Message.new(content:'hoge', text:'fuga')
+   (0.7ms)  SET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483
+Traceback (most recent call last):
+        1: from (irb):1
+ActiveModel::UnknownAttributeError (unknown attribute 'text' for Message.)
+```
