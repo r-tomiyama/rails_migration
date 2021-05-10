@@ -1,24 +1,15 @@
-# README
+# マイグレーションを理解する
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Modelの生成
 
-Things you may want to cover:
+```
+-> % rails g model Message content:string
 
-* Ruby version
+-> % mysql -u root
 
-* System dependencies
+mysql> use rails_migration_development;
+Database changed
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+mysql> show tables;
+Empty set (0.00 sec)
+```
