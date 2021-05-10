@@ -1,6 +1,8 @@
 # マイグレーションを理解する
 
-## Model&マイグレーションファイル①の生成
+## マイグレーションの基本
+
+### Model&マイグレーションファイル①の生成
 
 ```
 -> % rails g model Message content:string
@@ -14,7 +16,7 @@ mysql> show tables;
 Empty set (0.00 sec)
 ```
 
-## マイグレーションの実行①
+### マイグレーションの実行①
 
 ```
 -> % rails db:migrate
@@ -32,8 +34,7 @@ mysql> show tables;
 +---------------------------------------+
 ```
 
-
-## Model&マイグレーションファイル②の生成
+### Model&マイグレーションファイル②の生成
 
 ```
 -> % rails g migration AddTextToMessages text:string
@@ -49,7 +50,7 @@ Traceback (most recent call last):
 ActiveModel::UnknownAttributeError (unknown attribute 'text' for Message.)
 ```
 
-## マイグレーションの実行②
+### マイグレーションの実行②
 
 ```
 -> % rails db:migrate
